@@ -52,12 +52,13 @@ body{
     display: inline-block;
     width: 100px;
     height: 100px;
+    margin-bottom: 16px;
     img{
         width: 100px;
         height: 100px;
         object-fit: cover;
         border-radius: 100px;
-        margin-bottom: 16px;
+        
     }  
 }
 

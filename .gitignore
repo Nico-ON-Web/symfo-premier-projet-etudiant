@@ -1,0 +1,54 @@
+### Symfony ###
+/.env.local
+/.env.*.local
+/.env.test.local
+/.env.dev.local
+
+# Ignore les fichiers de logs et cache
+/var/cache/
+/var/log/
+/var/test/
+/var/backups/
+
+# Ignore les vendors (installés via Composer)
+/vendor/
+
+# Ignore les dépendances front-end (si tu utilises Webpack encore)
+/node_modules/
+
+
+# Ignore les fichiers des outils IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Test coverage & debug tools
+/coverage/
+/phpunit.result.cache
+/.phpunit.cache/
+
+# Ignore le fichier SQLite local si utilisé
+/var/data.db
+*.sqlite
+
+# Symfony Encore / Vite
+/public/assets/
+/assets/build/
+/vite.svg
+
+# JetBrains / PHPStorm
+/.phpunit.result.cache
+/.phpstorm.meta.php
+
+# Composer
+composer.lock
+
+# Autres fichiers temporaires
+*.log
+*.bak
+*.tmp
