@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <a href={{ path("app_index") }}>retour a l'accueil</a>
+    
+    <h1>Bonjour</h1>
+    <div class="flex">
+    
+    {% for utilisateur in utilisateurs %}
+        <div class="card">
+            <div class="avatar">
+                {% if utilisateur.image == null %}
+                    <div class="avatar-initiales">{{ utilisateur.nom | initiales }}</div>
+                    
+                {% else %}  
+                    <img src={{ asset('images/' ~ utilisateur.image) }} alt="">  
+                {% endif %}
+                
+                <div class="activity {{ utilisateur.est_actif ? "is_active" : "is_not_active" }}"></div>
+            </div>
+            <h2>{{ utilisateur.nom }}</h2>
+            <p>{{utilisateur.email}}</p> 
+            <p>{{ utilisateur.est_actif|statusActivity }}</p>
+            <a href={{ path('app_detail',{id:utilisateur.id}) }} class="btn">Voir le profil</a>
+        </div>
+    {% endfor %}
+    </div>
+    
+
+    
+   
+
+    <!-- Petite carte di'dentité : photo , nom , email, est actif avec un tout petit peu de style-->
+{% endblock %}
+
+

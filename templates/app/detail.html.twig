@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <h1>Détail du profil de {{ utilisateur.nom }}</h1>
+    <div class="avatar">
+        <img src={{ asset('images/' ~ utilisateur.image) }} alt="">
+        <div class="activity is_active"></div>
+    </div>
+    
+    <h5>email:</h5>
+    <p>{{ utilisateur.email }}</p>
+    <h5>date de naissance:</h5>
+    <p>{{ utilisateur.date_naissance|date('d/m/Y')}}</p>
+    <h5>Adresse:</h5>
+    <p>{{ utilisateur.adresse.rue }} {{ utilisateur.adresse.code_postal }} {{ utilisateur.adresse.ville }}</p>
+
+{% endblock %}
