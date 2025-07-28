@@ -61,7 +61,7 @@ final class UserController extends AbstractController
        // dd($form);
         // j'affiche le formulaire
 
-        return $this->render('user/create.html.twig', [
+        return $this->render('user/form.html.twig', [
             "form"=>$form
         ]);
     }

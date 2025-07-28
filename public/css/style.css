@@ -99,3 +99,13 @@ h1{
 .is_not_active{
     background-color: rgb(201, 28, 28);
 }
+
+.input-error{
+    border: 1px solid red;
+}
+
+.p-error{
+    color: red;
+    font-style: italic;
+    list-style: none;
+}

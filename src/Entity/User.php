@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -14,8 +15,10 @@ class User
     private ?int $id = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\Length(min:4, max:100, minMessage: "ce champs doit contenir plus de 4 caracteres", maxMessage:'ce champs ne doit pas contenir plus de 100 caracteres')]
     private ?string $nom = null;
 
+    #[Assert\NotBlank(message: "ce champs ne peut pas etre vide")]
     #[ORM\Column(nullable: true)]
     private ?int $age = null;
 

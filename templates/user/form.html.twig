@@ -1,0 +1,50 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+
+    <div>
+        <!-- label -->
+        {{ form_label(form.nom) }}
+        <!-- input -->
+        {{ form_widget(form.nom, {
+            "attr": { 'class': "form-control " ~ (form.nom.vars.errors|length >0 ? "input-error" : '')}
+        }) }}
+        <!-- Messages d'erreurs -->
+        <div class="p-error">
+            {{form_errors(form.nom)}}
+        </div>
+    </div>
+
+     <div>
+        <!-- label -->
+        {{ form_label(form.email) }}
+        <!-- input -->
+        {{ form_widget(form.email, {
+            "attr": { 'class':"form-control " ~ (form.email.vars.errors|length >0 ? "input-error" : '')}
+        }) }}
+        <!-- Messages d'erreurs -->
+        <div class="p-error">
+            {{form_errors(form.email)}}
+        </div>
+        
+    </div>
+
+     <div>
+        <!-- label -->
+        {{ form_label(form.age) }}
+        <!-- input -->
+        {{ form_widget(form.age, {
+            "attr": { 'class':"form-control " ~ (form.age.vars.errors|length >0 ? "input-error" : '')}
+        }) }}
+        <!-- Messages d'erreurs -->
+        <div class="p-error">
+            {{form_errors(form.age)}}
+        </div>
+        
+    </div>
+    
+    <input type="submit" value="Enregistrer">
+{{ form_end(form) }}
+{% endblock %}
